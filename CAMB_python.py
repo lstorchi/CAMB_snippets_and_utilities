@@ -16,6 +16,11 @@ if __name__ == "__main__":
     print('Using Python version: %s\n' % platform.python_version())
     #print(dir(camb))
 
+    pars = camb.read_ini('high_acc.ini')
+    camb.write_ini(pars, "ttest.ini")
+    exit()
+
+
     #Set up a new set of parameters for CAMB
     #The defaults give one massive neutrino and helium set using BBN consistency
     pars = camb.set_params(H0=67.5, ombh2=0.022, omch2=0.122, mnu=0.06, omk=0, tau=0.06,  
