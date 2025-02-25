@@ -1,0 +1,20 @@
+- PYTHON
+
+  git clone --recursive git@github.com:lstorchi/CAMB.git
+  conda create -n camb python=3.11
+  conda activate camb
+  pip install -e ./CAMB
+
+  to reompile:
+
+  cd ./CAMB/fortran/ ; make clean ; cd -  ; rm ./CAMB/camb/camblib.so ; pip install -e ./CAMB 
+
+
+- FORTRAN
+
+  git clone --recursive git@github.com:lstorchi/CAMB.git CAMB_F
+  cd CAMB_F/
+  git submodule init
+  git sumbodule update
+  cd fortran
+  make
